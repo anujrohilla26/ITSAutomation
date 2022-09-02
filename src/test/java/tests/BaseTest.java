@@ -51,7 +51,7 @@ public class BaseTest extends Instance{
 
 
 	@BeforeMethod
-	public void setup(){
+	public void setup() throws InterruptedException{
 		driversetup.openApplication();
 	    login= new Login();
 	    availableLoads = new AvailableLoads();
