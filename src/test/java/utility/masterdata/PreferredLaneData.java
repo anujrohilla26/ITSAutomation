@@ -5,7 +5,7 @@ import utility.constants.Constants;
 
 public interface PreferredLaneData {
 	
-	//MODULE TEST DATA
+	//PreferredLane TEST DATA
 	
 			String Origin=getPreferredLaneData("Origin");
 			String Destination =getPreferredLaneData("Destination");
@@ -20,7 +20,7 @@ public interface PreferredLaneData {
 			/**METHOD**/
 			 
 			 /*
-			  * fetch Module Data
+			  * fetch PreferredLane Data
 			  */
 			public static String getPreferredLaneData(String key) {
 				return FileManager.readColumnValueUsingKeyFromExcel(Constants.TESTDATA_PATH, "MasterData.xlsx", "PreferredLaneData", key);

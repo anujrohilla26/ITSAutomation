@@ -28,7 +28,7 @@ import pages.AvailableLoadsPage;
 		}
 		
 		
-		@Test(description= "Verify Add to watchlist from Available Loads ")
+		@Test(description= "40495 Verify Add to watchlist from Available Loads ")
 			public void Verify_WatchlistFromAvailableLoads()
 			{
 			   

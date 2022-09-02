@@ -11,6 +11,8 @@ public interface ModuleData {
 		String DedicatedOpportunitiesModule=getModuleData("DedicatedOpportunitiesModule");
 		String CurrentLoadsModule =getModuleData("CurrentLoadsModule");
 		String PreferredLaneSubscriptionsModule =getModuleData("PreferredLaneSubscriptionsModule");
+		String ReloadsModule =getModuleData("ReloadsModule");
+
 
 		
 		

@@ -7,10 +7,9 @@ import utility.masterdata.ModuleData;
 public class DedicatedOpportunitiesTests extends BaseTest {
 			
 	
-	@Test(description="Verify Dedicated Lane Opportunities Logic")
+	@Test(description="43401 Verify Dedicated Lane Opportunities Logic")
 	public void VerifyDedicatedLaneOpportunitiesLogic() throws InterruptedException{
 
-		//login.loginIntoApplication();
 		commonPage.navigateToModule(driver, ModuleData.DedicatedOpportunitiesModule);
 		availableLoadsPage.clickLoad(driver);
 		commonPage.navigateToModule(driver, ModuleData.CurrentLoadsModule);
@@ -19,10 +18,9 @@ public class DedicatedOpportunitiesTests extends BaseTest {
 		softAssert.assertAll();		
 	}
 	
-	@Test(description="Verify In Current Loads Book Now Close modal Are you sure you want to exit modal")
+	@Test(description="43400 Verify In Current Loads Book Now Close modal Are you sure you want to exit modal")
 	public void VerifyCurrentLoadBookNowCloseModal() throws InterruptedException{
 
-		//login.loginIntoApplication();
 		commonPage.navigateToModule(driver, ModuleData.DedicatedOpportunitiesModule);
 		availableLoadsPage.clickLoad(driver);
 		commonPage.navigateToModule(driver, ModuleData.CurrentLoadsModule);
@@ -37,10 +35,9 @@ public class DedicatedOpportunitiesTests extends BaseTest {
 		
 }
 	
-	@Test(description="Verify Submit Interest Confirmation Message in Current Loads")
+	@Test(description="43379 Verify Submit Interest Confirmation Message in Current Loads")
 	public void VerifySubmitInterestInCurrentLoads() throws InterruptedException{
 
-		//login.loginIntoApplication();
 		commonPage.navigateToModule(driver, ModuleData.DedicatedOpportunitiesModule);
 		availableLoadsPage.clickLoad(driver);
 		commonPage.navigateToModule(driver, ModuleData.CurrentLoadsModule);
@@ -53,10 +50,9 @@ public class DedicatedOpportunitiesTests extends BaseTest {
 	}
 	
 	
-	@Test(description="Verify Submit Bid Confirmation Message in Current Loads")
+	@Test(description="43384 Verify Submit Bid Confirmation Message in Current Loads")
 	public void VerifySubmitBidInCurrentLoads() {
 
-		//login.loginIntoApplication();
 		commonPage.navigateToModule(driver, ModuleData.DedicatedOpportunitiesModule);
 		availableLoadsPage.clickLoad(driver);
 		commonPage.navigateToModule(driver, ModuleData.CurrentLoadsModule);

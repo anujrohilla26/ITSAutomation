@@ -5,9 +5,12 @@ import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import utility.Instance;
@@ -28,8 +31,6 @@ public class BasePage extends Instance{
 		return driver.findElement(bylocator(type,locator));
 	}
 	
-	
-
 	public static By bylocator(Types type,String locator) {
 		switch(type) {
 		case XPATH:
@@ -42,7 +43,6 @@ public class BasePage extends Instance{
 			return By.className(locator);
 		default:
 			return null;	
-
 		}
 
 	}
@@ -58,6 +58,7 @@ public class BasePage extends Instance{
 	}
 
 	public void click(String locator, Types type) {
+		waitForElementVisiblity(locator, type);
 		element(locator,type).click();
 	}
 
@@ -136,6 +137,20 @@ public class BasePage extends Instance{
 	
 	public void pageRefresh() {
 		driver.navigate().refresh();
+	}
+	
+	public void selectValueUsingSelectClass(String locator, Types type,  String value) {
+		try {
+			waitForElementVisiblity(locator, type);
+			Select dropdown = new Select(element(locator,type));
+			dropdown.selectByValue(value);
+			//log.info("SelectByValue action performed successfully on element " + driver);
+		} catch (TimeoutException e) {
+			//log.error("Timeout occurs while selecting dropdrown option for element " + locator);
+			e.printStackTrace();
+		} catch (NoSuchElementException e) {
+			//log.error("NoSuchElementException occurs while selecting dropdrown option " + locator);
+		}
 	}
 	
 }

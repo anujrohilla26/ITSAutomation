@@ -8,7 +8,7 @@ import utility.masterdata.PreferredLaneData;
 public class AddPreferredLaneTests extends BaseTest {
 	
 	
-	@Test(description="Verify Power Only Equipment Type in Add Preferred Lane")
+	@Test(description="43374 Verify Power Only Equipment Type in Add Preferred Lane")
 	public void VerifyPowerOnlyTypeInPreferredLane() {
 		
 		addPreferredLanePage.clickOnAddPreferredLane();
@@ -32,7 +32,7 @@ public class AddPreferredLaneTests extends BaseTest {
 		
 	}
 	
-	@Test(description="Verify Power Only Equipment Type in Add Preferred Lane")
+	@Test(description="44508 Verify Power Only Equipment Type in Add Preferred Lane")
 	public void VerifyPowerOnlyTypeInAvailableLoads() {
 		filterPage.applyFilter("EQUIP", "Power Only");
 		availableLoadsPage.clickLoad(driver);
