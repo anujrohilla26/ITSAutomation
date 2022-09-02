@@ -32,12 +32,10 @@ public class Hooks extends Instance {
 		driversetup.openApplication();
 		loginPage = PageFactory.initElements(driver,LoginPage.class); 
 		dialogPage = PageFactory.initElements(driver,DialogPage.class); 
-
 	}
 
 	@AfterMethod
 	public void testteardown(){
-
 		//driver.quit();
 	}
 

@@ -19,9 +19,6 @@ public class Login extends Instance{
 	DialogPage dialogPage = new DialogPage();
 	CommonPage common = new CommonPage();
 
-	public final  String EMAIL ="EMAIL";
-	public final  String  PASSWORD="PASSWORD";
-	
 	Utils utils = new Utils();
 	Map<String, String> data = new HashMap <String, String>();
 
@@ -29,6 +26,10 @@ public class Login extends Instance{
 		data.put(EMAIL,FileManager.readProperty(Constants.configFilePath, "email"));
 		data.put(PASSWORD,FileManager.readProperty(Constants.configFilePath, "password"));
 	}
+
+	public final  String EMAIL ="EMAIL";
+	public final  String  PASSWORD="PASSWORD";
+
 
 	public Map<String, String> getData() {
 		return data;
@@ -46,15 +47,13 @@ public class Login extends Instance{
 		this.data = data;
 	}
 
-	public void loginIntoApplication() {
+	public void loginIntoApplication() throws InterruptedException {
 		loginPage.setEmailAddressEmailField(getData(EMAIL));
 		loginPage.setPasswordPasswordField(getData(PASSWORD));
 		loginPage.clickSignInButton();
 		common.waitUntilWelcomeMsgDisplayed();
-		//driver.navigate().refresh();
 		loginPage.clickOnBeginWithVaultDemo(driver);
 		loginPage.tableDataVisible();
-		
 	}
 
 	public void loginIntoApplication(String email,String password) {
@@ -69,4 +68,5 @@ public class Login extends Instance{
 		String error2= loginPage.getPasswordText(driver);
 		Assert.assertEquals(error2, text2);
 	}
+
 }

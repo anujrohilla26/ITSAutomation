@@ -6,7 +6,6 @@ import java.io.FileReader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Properties;
-
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
@@ -49,8 +48,7 @@ public class FileManager {
 				System.out.println("Failed to delete " + file);
 			}
 		}}	
-	
-	
+		
 	@SuppressWarnings("deprecation")
 	public static String readColumnValueUsingKeyFromExcel(String filePath, String fileName,String sheetName,String keyName) {
 		File file = new File(filePath + File.separator + fileName);
